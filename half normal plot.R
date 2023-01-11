@@ -1,0 +1,17 @@
+library(readxl)
+loc = read_excel("locationeffect.xlsx")
+attach(loc)
+loceffect <- as.data.frame(loc)
+str(loceffect)
+qqnorm(loceffect$`Location effect`,xlim=c(0,2),ylim=c(0,1.5),main="Half-Normal Location Effect Plot" )
+qqline(loceffect$`Location effect`, col=3)
+abline(0,0)
+
+disp = read_excel("dispersioneffect.xlsx")
+attach(disp)
+dispeffect <- as.data.frame(disp)
+str(dispeffect)
+qqnorm(dispeffect$`Dispersion effect`,xlim=c(0,2),ylim=c(0,2),main="Half-Normal Dispersion Effect Plot" )
+qqline(dispeffect$`Dispersion effect`, col=3)
+abline(0,0)
+
